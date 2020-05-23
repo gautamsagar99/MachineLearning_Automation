@@ -9,7 +9,7 @@ from keras.utils import np_utils
 import keras
 import sys
 
-sys.stdin=open('/mlops/input.txt','r')
+sys.stdin=open('/root/Desktop/ml-automation/input.txt','r')
 
 # loading the MNIST dataset
 (x_train, y_train), (x_test, y_test)  = mnist.load_data()
@@ -119,18 +119,18 @@ history = model.fit(x_train, y_train,
           validation_data=(x_test, y_test),
           shuffle=True)
 
-model.save("mlops_automation.h5")
+model.save("ml_automation.h5")
 
 # Evaluate the performance of our trained model
 scores = model.evaluate(x_test, y_test, verbose=1)
 print('Test loss:', scores[0])
 print('Test accuracy:', scores[1])
 
-accuracy_file = open('/mlops/accuracy_check.txt','w')
+accuracy_file = open('/root/Desktop/ml-automation/accuracy_check.txt','w')
 accuracy_file.write(str(scores[1]))
 accuracy_file.close()
 
-display_matter = open('/mlops/display.html','r+')
+display_matter = open('/root/Desktop/ml-automation/display.html','r+')
 display_matter.read()
 display_matter.write('<pre>\n---------------------------------------------\n')
 display_matter.write(this_layer)
