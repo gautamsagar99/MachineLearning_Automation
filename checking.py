@@ -8,4 +8,4 @@ if 'keras' or 'tensorflow' in code:			#because keras or tensorflow keyword is a 
 	else:
 		print('not OK')
 else:
-	print('not deep learning')
+	print('NOT A NEURAL NETWORK')
