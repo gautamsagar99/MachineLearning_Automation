@@ -9,7 +9,7 @@ from keras.utils import np_utils
 import keras
 import sys
 
-sys.stdin=open('/machinelearning/input.txt','r')
+sys.stdin=open('/mlops/input.txt','r')
 
 # loading the MNIST dataset
 (x_train, y_train), (x_test, y_test)  = mnist.load_data()
@@ -21,7 +21,6 @@ img_cols = x_train[1].shape[0]
 # Getting our data in the right dimensions needed for Keras
 # We need to add a 4th dimenion to our data thereby changing our
 # Our original image shape of (60000,28,28) to (60000,28,28,1)
-
 x_train = x_train.reshape(x_train.shape[0], img_rows, img_cols, 1)
 x_test = x_test.reshape(x_test.shape[0], img_rows, img_cols, 1)
 
@@ -32,7 +31,7 @@ input_shape = (img_rows, img_cols, 1)
 x_train = x_train.astype('float32')
 x_test = x_test.astype('float32')
 
-# Normalize our data 
+# Normalize our data by changing the range from (0 to 255) to (0 to 1)
 x_train /= 255
 x_test /= 255
 
@@ -119,18 +118,18 @@ history = model.fit(x_train, y_train,
           validation_data=(x_test, y_test),
           shuffle=True)
 
-model.save("ml_automation.h5")
+model.save("mlops_automation.h5")
 
 # Evaluate the performance of our trained model
 scores = model.evaluate(x_test, y_test, verbose=1)
 print('Test loss:', scores[0])
 print('Test accuracy:', scores[1])
 
-accuracy_file = open('/machinelearning/show_accuracy.txt','w')
+accuracy_file = open('/mlops/show_accuracy.txt','w')
 accuracy_file.write(str(scores[1]))
 accuracy_file.close()
 
-display_matter = open('/machinelearning/show_output.html','r+')
+display_matter = open('/mlops/show_output.html','r+')
 display_matter.read()
 display_matter.write('<pre>\n---------------------------------------------\n')
 display_matter.write(this_layer)
