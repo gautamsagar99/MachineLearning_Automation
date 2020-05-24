@@ -1,6 +1,6 @@
 data_file = open('/root/Desktop/ml-automation/data.txt','r')
 input_file = open('/root/Desktop/ml-automation/input.txt','r')
-accuracy_file = open('/root/Desktop/ml-automation/accuracy_check.txt','r')
+accuracy_file = open('/root/Desktop/ml-automation/show_accuracy.txt','r')
 
 data = data_file.read()
 data = data.split('\n')
