@@ -2,7 +2,7 @@ from keras.preprocessing.image import ImageDataGenerator
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Activation, Flatten
 from keras.layers import Conv2D, MaxPooling2D, ZeroPadding2D
-from keras.layers.normalization import BatchNormalization
+from keras.layers import BatchNormalization
 from keras.regularizers import l2
 from keras.datasets import mnist
 from keras.utils import np_utils
@@ -118,7 +118,7 @@ history = model.fit(x_train, y_train,
           validation_data=(x_test, y_test),
           shuffle=True)
 
-model.save("mlops_automation.h5")
+model.save("/machinelearning/mlops_automation.h5")
 
 # Evaluate the performance of our trained model
 scores = model.evaluate(x_test, y_test, verbose=1)
