@@ -1,6 +1,5 @@
 import smtplib, ssl
 
-
 port = 465  # For SSL
 smtp_server = "smtp.gmail.com"
 sender_email = "gautamsagar.mallela99@gmail.com"  # Enter your address
