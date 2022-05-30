@@ -3,8 +3,8 @@ import smtplib, ssl
 
 port = 465  # For SSL
 smtp_server = "smtp.gmail.com"
-sender_email = "my@gmail.com"  # Enter your address
-receiver_email = "your@gmail.com"  # Enter receiver address
+sender_email = "gautamsagar.mallela99@gmail.com"  # Enter your address
+receiver_email = "gautamsagar72@gmail.com"  # Enter receiver address
 password = input("Type your password and press enter: ")
 message = """\
 Subject: "Model created Success full"
