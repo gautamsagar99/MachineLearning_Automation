@@ -1,6 +1,6 @@
-data_file = open('/root/ml-automation/data.txt','r')
-input_file = open('/root/ml-automation/input.txt','r')
-accuracy_file = open('/root/ml-automation/show_accuracy.txt','r')
+data_file = open('/home/ec2-user/ml-automation/data.txt','r')
+input_file = open('/home/ec2-user/ml-automation/input.txt','r')
+accuracy_file = open('/home/ec2-user/ml-automation/show_accuracy.txt','r')
 
 data = data_file.read()
 data = data.split('\n')
@@ -95,8 +95,8 @@ data_file.close()
 input_file.close()
 
 #opening both the files in write mode
-data_file = open('/root/ml-automation/data.txt','w')
-input_file = open('/root/ml-automation/input.txt','w')
+data_file = open('/home/ec2-user/ml-automation/data.txt','w')
+input_file = open('/home/ec2-user/ml-automation/input.txt','w')
 
 data_file_data = str(old_accuracy) + '\n' + str(layer) + '\n' + str(line) + '\n' + str(entered_data) + '\n' + str(old_data) + '\n' + str(index_fc)
 
